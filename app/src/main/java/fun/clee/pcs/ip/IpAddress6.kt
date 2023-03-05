@@ -22,29 +22,55 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
                         if (list.size != 8) {
                             return null
                         }
-                        list.mapNotNull { str -> str.toUShortOrNull(16) }
+                        list.map { str ->
+                            str.toUShortOrNull(16) ?: return null
+                        }.toUShortArray()
                     }
                 }
 
-                val left = it[0].split(':')
-                if (left.size > 6) {
+                // case: more than 2 consecutive ":"
+                if (it[0].startsWith(':') || it[0].endsWith(':')
+                    || it[1].startsWith(':') || it[1].endsWith(':')) {
                     return null
                 }
-                val right = it[1].split(':')
-                if (left.size + right.size > 7) {
+
+                val leftStrs = it[0].split(':')
+                if (leftStrs.size > 6) {
                     return null
                 }
-                MutableList(8) { "0" }.apply {
-                    for ((index, str) in left.withIndex()) {
-                        this[index] = str.ifEmpty { "0" }
+                val rightStrs = it[1].split(':')
+
+                // case 1: "::" on the edge, max size should <=7, (x:x:x:x:x:x:: or ::x:x:x:x:x:x)
+                // case 2: "::" is inside, max size should <=6, (x:x:x:x:x::x)
+                if (((it[0].isEmpty() || it[1].isEmpty()) && leftStrs.size + rightStrs.size > 7)
+                    || !(it[0].isEmpty() || it[1].isEmpty()) && leftStrs.size + rightStrs.size > 6) {
+                    return null
+                }
+
+                // String map to Short
+                val leftShorts = leftStrs.map { str ->
+                    if (str.isEmpty()) 0u else str.toUShortOrNull(16) ?: return null
+                }
+                val rightShorts = rightStrs.map { str ->
+                    if (str.isEmpty()) 0u else str.toUShortOrNull(16) ?: return null
+                }
+
+                // case: has "0" before or after "::"
+                if (it[0].isNotEmpty() && leftShorts.last().toUInt() == 0u
+                    || it[1].isNotEmpty() && rightShorts.first().toUInt() == 0u) {
+                    return null
+                }
+
+                // add the extra 0 and transform to UShortArray
+                UShortArray(8) { 0u }.apply {
+                    for ((index, number) in leftShorts.withIndex()) {
+                        this[index] = number
                     }
-                    for ((index, str) in right.reversed().withIndex()) {
-                        this[7 - index] = str.ifEmpty { "0" }
+                    for ((index, number) in rightShorts.reversed().withIndex()) {
+                        this[7 - index] = number
                     }
-                }.mapNotNull { str -> str.toUShortOrNull(16) }
-            }?.let {
-                create(it.toUShortArray())
-            }
+                }
+            }?.let { create(it) }
         }
 
         @JvmStatic
@@ -63,34 +89,34 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
     }
 
     override fun isMulticastAddress(): Boolean {
-        return address[0].toInt() and 0xff00 == 0xff00
+        return address[0].toUInt() and 0xff00u == 0xff00u
     }
 
     override fun isAnyLocalAddress(): Boolean {
-        return address.all { it.toInt() == 0x0 }
+        return address.all { it.toUInt() == 0x0u }
     }
 
     override fun isLoopbackAddress(): Boolean {
-        return address[7].toInt() == 0x1
+        return address.sum() == 1u && address[7].toUInt() == 0x1u
     }
 
     override fun isLinkLocalAddress(): Boolean {
-        return address[0].toInt() and 0xffc0 == 0xfe80
+        return address[0].toUInt() and 0xffc0u == 0xfe80u
     }
 
     override fun isSiteLocalAddress(): Boolean {
-        return address[0].toInt() and 0xffc0 == 0xfec0
+        return address[0].toUInt() and 0xffc0u == 0xfec0u
     }
 
     override fun equals(other: Any?): Boolean {
         if (other !is IpAddress6) {
             return false
         }
-        if (address.size != 4 || other.address.size != 4) {
+        if (address.size != 8 || other.address.size != 8) {
             return false
         }
-        for ((index, num) in address.withIndex()) {
-            if (num != other.address[index]) {
+        for (i in 0..7) {
+            if (address[i] != other.address[i]) {
                 return false
             }
         }
