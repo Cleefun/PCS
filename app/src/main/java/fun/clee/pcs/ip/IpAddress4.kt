@@ -33,8 +33,10 @@ class IpAddress4 private constructor(private val address: UByteArray) : IpAddres
         }
     }
 
+    private val hostAddress = "${address[0]}.${address[1]}.${address[2]}.${address[3]}"
+
     override fun getHostAddress(): String {
-        return "${address[0]}.${address[1]}.${address[2]}.${address[3]}"
+        return hostAddress
     }
 
     override fun isMulticastAddress(): Boolean {
@@ -71,14 +73,14 @@ class IpAddress4 private constructor(private val address: UByteArray) : IpAddres
         if (other !is IpAddress4) {
             return false
         }
-        return getHostAddress() == other.getHostAddress()
+        return hostAddress == other.hostAddress
     }
 
     override fun hashCode(): Int {
-        return getHostAddress().hashCode()
+        return hostAddress.hashCode()
     }
 
     override fun toString(): String {
-        return getHostAddress()
+        return hostAddress
     }
 }

@@ -78,8 +78,10 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
         }
     }
 
+    private val hostAddress = address.joinToString(separator = ":") { it.toString(16) }
+
     override fun getHostAddress(): String {
-        return address.joinToString(separator = ":") { it.toString(16) }
+        return hostAddress
     }
 
     override fun isMulticastAddress(): Boolean {
@@ -106,14 +108,14 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
         if (other !is IpAddress6) {
             return false
         }
-        return getHostAddress() == other.getHostAddress()
+        return hostAddress == other.hostAddress
     }
 
     override fun hashCode(): Int {
-        return getHostAddress().hashCode()
+        return hostAddress.hashCode()
     }
 
     override fun toString(): String {
-        return getHostAddress()
+        return hostAddress
     }
 }
