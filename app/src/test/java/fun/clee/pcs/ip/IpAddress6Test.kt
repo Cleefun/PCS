@@ -18,7 +18,6 @@ class IpAddress6Test {
         assertEquals("0:0:0:0:0:0:0:0", IpAddress6.create("::")!!.getHostAddress())
         assertEquals("0:0:0:0:0:0:0:1", IpAddress6.create("::1")!!.getHostAddress())
         assertEquals("1:0:0:0:0:0:0:0", IpAddress6.create("1::")!!.getHostAddress())
-        // todo: host IP in this case should be invalid
         assertEquals("1:0:0:0:0:1:0:0", IpAddress6.create("1:0:0:0:0:1::")!!.getHostAddress())
         assertEquals("ffff:0:0:0:0:0:0:ffff", IpAddress6.create("ffff::ffff")!!.getHostAddress())
         assertEquals("ffff:1:0:0:0:0:0:ffff", IpAddress6.create("ffff:1::ffff")!!.getHostAddress())
@@ -33,9 +32,6 @@ class IpAddress6Test {
         assertNull(IpAddress6.create(":"))
         assertNull(IpAddress6.create(":::"))
         assertNull(IpAddress6.create("1::1::1"))
-        assertNull(IpAddress6.create("0::"))
-        assertNull(IpAddress6.create("::0"))
-        assertNull(IpAddress6.create("::0"))
         // Created by number address
         UShortArray(8) { 0u }.apply { this[7] = 0xffffu }.run {
             assertEquals("0:0:0:0:0:0:0:ffff", IpAddress6.create(this)!!.getHostAddress())

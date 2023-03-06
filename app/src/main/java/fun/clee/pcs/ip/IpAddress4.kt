@@ -16,7 +16,7 @@ class IpAddress4 private constructor(private val address: UByteArray) : IpAddres
                 if (it.size != 4) {
                     return null
                 }
-                it.mapNotNull { str -> str.toUByteOrNull() }
+                it.map { str -> str.toUByteOrNull() ?: return null }
             }?.let {
                 create(it.toUByteArray())
             }
@@ -71,19 +71,11 @@ class IpAddress4 private constructor(private val address: UByteArray) : IpAddres
         if (other !is IpAddress4) {
             return false
         }
-        if (address.size != 4 || other.address.size != 4) {
-            return false
-        }
-        for ((index, num) in address.withIndex()) {
-            if (num != other.address[index]) {
-                return false
-            }
-        }
-        return true
+        return getHostAddress() == other.getHostAddress()
     }
 
     override fun hashCode(): Int {
-        return address.hashCode()
+        return getHostAddress().hashCode()
     }
 
     override fun toString(): String {

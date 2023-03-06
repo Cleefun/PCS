@@ -55,12 +55,6 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
                     if (str.isEmpty()) 0u else str.toUShortOrNull(16) ?: return null
                 }
 
-                // case: has "0" before or after "::"
-                if (it[0].isNotEmpty() && leftShorts.last().toUInt() == 0u
-                    || it[1].isNotEmpty() && rightShorts.first().toUInt() == 0u) {
-                    return null
-                }
-
                 // add the extra 0 and transform to UShortArray
                 UShortArray(8) { 0u }.apply {
                     for ((index, number) in leftShorts.withIndex()) {
@@ -112,19 +106,11 @@ class IpAddress6 private constructor(private val address: UShortArray) : IpAddre
         if (other !is IpAddress6) {
             return false
         }
-        if (address.size != 8 || other.address.size != 8) {
-            return false
-        }
-        for (i in 0..7) {
-            if (address[i] != other.address[i]) {
-                return false
-            }
-        }
-        return true
+        return getHostAddress() == other.getHostAddress()
     }
 
     override fun hashCode(): Int {
-        return address.hashCode()
+        return getHostAddress().hashCode()
     }
 
     override fun toString(): String {
