@@ -8,11 +8,11 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/ip_text"
+        android:id="@+id/hostname_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:hint="input ipv4 or ipv6" />
+        android:hint="Input host name" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:text="Get local IP" />
+            android:text="Get public IP" />
     </LinearLayout>
 
     <TextView
@@ -40,6 +40,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="15dp" />
-
+        android:layout_marginTop="15dp"
+        android:textSize="18sp" />
 </LinearLayout>

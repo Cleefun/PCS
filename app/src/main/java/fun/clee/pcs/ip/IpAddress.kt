@@ -26,4 +26,19 @@ interface IpAddress {
     fun isLinkLocalAddress(): Boolean
 
     fun isSiteLocalAddress(): Boolean
+
+    companion object {
+        fun create(hostAddress: String?): IpAddress? {
+            if (hostAddress == null) {
+                return null
+            }
+            if (hostAddress.contains('.')) {
+                return IpAddress4.create(hostAddress)
+            }
+            if (hostAddress.contains(':')) {
+                return IpAddress6.create(hostAddress)
+            }
+            return null
+        }
+    }
 }
