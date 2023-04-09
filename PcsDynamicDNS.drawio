@@ -1,9 +1,107 @@
-<mxfile host="app.diagrams.net" modified="2023-04-09T03:39:52.811Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" version="21.1.5" etag="8gTRtonwjheqM17SmFBN" type="github">
+<mxfile host="app.diagrams.net" modified="2023-04-09T04:04:19.311Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36 Edg/112.0.1722.34" etag="CRCgtoslkj-RIn_b5ngf" version="21.1.5" type="github">
   <diagram name="第 1 页" id="foehgj6SiuqzubV7A3PP">
-    <mxGraphModel>
+    <mxGraphModel dx="954" dy="648" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="7TByGs98WEF-A45FdTyk-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-1" target="7TByGs98WEF-A45FdTyk-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-1" value="Start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="110" y="60" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-2" target="7TByGs98WEF-A45FdTyk-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-2" value="Get all IP addresses&amp;nbsp;of current device" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="150" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-4" target="7TByGs98WEF-A45FdTyk-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-7" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7TByGs98WEF-A45FdTyk-6">
+          <mxGeometry x="-0.25" relative="1" as="geometry">
+            <mxPoint x="-1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-10" value="Y" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" target="7TByGs98WEF-A45FdTyk-9">
+          <mxGeometry x="0.0087" relative="1" as="geometry">
+            <mxPoint x="212.5" y="290" as="sourcePoint" />
+            <mxPoint x="270" y="290" as="targetPoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-4" value="Public IP exist?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="57.5" y="250" width="155" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-5" target="7TByGs98WEF-A45FdTyk-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-5" value="Delete DNS record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="75" y="370" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-9" target="7TByGs98WEF-A45FdTyk-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-9" value="Get(Resolve) IP of device&#39;s domain" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="347.5" y="260" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-12" value="End" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="230" y="375" width="50" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-14" target="7TByGs98WEF-A45FdTyk-18">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-20" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7TByGs98WEF-A45FdTyk-19">
+          <mxGeometry x="-0.056" relative="1" as="geometry">
+            <mxPoint x="-1" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-14" target="7TByGs98WEF-A45FdTyk-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-29" value="Y" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7TByGs98WEF-A45FdTyk-28">
+          <mxGeometry x="-0.08" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-14" value="IP in device IP list?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="360" width="155" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-18" target="7TByGs98WEF-A45FdTyk-21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-18" value="Get public IP by query API" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="347.5" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-21" target="7TByGs98WEF-A45FdTyk-23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-25" value="Y" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7TByGs98WEF-A45FdTyk-24">
+          <mxGeometry x="0.05" relative="1" as="geometry">
+            <mxPoint y="-30" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-21" target="7TByGs98WEF-A45FdTyk-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-32" value="N" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="7TByGs98WEF-A45FdTyk-31">
+          <mxGeometry x="0.4917" y="-1" relative="1" as="geometry">
+            <mxPoint x="-2" y="1" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-21" value="IP in device IP list?" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="330" y="584.5" width="155" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="7TByGs98WEF-A45FdTyk-23" target="7TByGs98WEF-A45FdTyk-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-23" value="Update record" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="195" y="480" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="7TByGs98WEF-A45FdTyk-33" value="&lt;h1&gt;PCS Dynamic DNS Procedure&lt;/h1&gt;&lt;p&gt;A schedule task that check and update DNS record.&lt;/p&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="10" width="380" height="120" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
